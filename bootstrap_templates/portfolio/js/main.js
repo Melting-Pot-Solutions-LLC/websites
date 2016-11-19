@@ -151,10 +151,10 @@
   });
 
   $(".sub-title").typed({
-    strings: ["Web Developer", "Web Designer"],
-    typeSpeed: 1,
-    backSpeed: 1,
-    backDelay: 1400,
+    strings: ["Computer Science Instructor", "Web Developer ", "Mobile Developer "],
+    typeSpeed: 0.2,
+    backSpeed: 0.2,
+    backDelay: 2500,
     loop: true
   });
 
