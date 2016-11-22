@@ -1,0 +1,21 @@
+$yellow-color: #F2CA27;
+
+.boss-scroll-down a:hover,.boss-scroll-down a:focus{
+	background: $yellow-color;
+	border-color: $yellow-color;
+}
+.boss-cta-area .boss-button a:hover,.boss-cta-area .boss-button a:focus{
+	color: $yellow-color;
+	border-color: $yellow-color;
+}
+
+.boss-subscribe-area .boss-form input:focus{
+	border-color: $yellow-color;
+}
+.boss-subscribe-area .boss-form input[type="submit"]:hover,.boss-subscribe-area .boss-form input[type="submit"]:focus{
+	border-color: $yellow-color;
+	background: $yellow-color;
+}
+.boss-footer-area p a:hover,.boss-footer-area p a:focus{
+	color: $yellow-color;
+}
