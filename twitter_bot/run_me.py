@@ -14,6 +14,8 @@ my_bot.auto_follow("@Ionicframework", count = 1)
 my_bot.auto_follow("@MikeMeyers", count = 1)
 my_bot.auto_follow("@IonicCreator", count = 1)
 my_bot.auto_follow("@itsnirnayr", count = 1)
+my_bot.auto_fav("@evankimbrell", count=1)
+
 
 my_bot.auto_fav("Elon Musk", count=1)
 my_bot.auto_fav("SpaceX", count=1)
@@ -22,6 +24,7 @@ my_bot.auto_fav("#startup", count=1)
 my_bot.auto_fav("#enterpreneur", count=1)
 my_bot.auto_fav("#ionic 2", count=1)
 my_bot.auto_fav("#ionic", count=1)
+
 
 
 my_bot.auto_fav("Columbia SC", count=1)
@@ -48,6 +51,8 @@ my_bot.auto_rt("from:DrAmandaR", count=1)
 my_bot.auto_rt("from:ElonMuskNewsOrg", count=1)
 my_bot.auto_rt("from:HarrisPastides", count=1)
 my_bot.auto_rt("from:TonyKlor", count=2)
+my_bot.auto_rt("from:evankimbrell", count=1)
+
 
 my_bot.auto_fav("from:elonmusk", count=1)
 my_bot.auto_fav("from:itsnirnay", count=1)
@@ -61,3 +66,4 @@ my_bot.auto_fav("from:amazon", count=1)
 my_bot.auto_fav("from:ElonMuskNewsOrg", count=1)
 my_bot.auto_fav("from:HarrisPastides", count=1)
 my_bot.auto_fav("from:TonyKlor", count=2)
+my_bot.auto_fav("from:evankimbrell", count=1)
