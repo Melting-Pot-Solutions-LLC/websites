@@ -1,8 +1,16 @@
 from TwitterFollowBot import TwitterBot
+import smtplib
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEText import MIMEText
 
 
-# what the bot should do
-# 
+from cStringIO import StringIO
+import sys
+
+old_stdout = sys.stdout
+sys.stdout = mystdout = StringIO()
+
+
 my_bot = TwitterBot()
 print "...starting executing the TwitterBot script..."
 
@@ -30,16 +38,9 @@ my_bot.auto_fav("#ionic", count=1)
 my_bot.auto_fav("Columbia SC", count=1)
 my_bot.auto_fav("Columbia, SC", count=1)
 
-# # my_bot.auto_rt("Ionic Framework", count=1)
-# my_bot.auto_rt("Ionic Creator", count=1)
-# my_bot.auto_rt("Elon Musk", count=1)
-# my_bot.auto_rt("Tesla", count=1)
-# my_bot.auto_rt("SpaceX", count=1)
-# my_bot.auto_rt("startup battlefield", count=1)
+
 
 # retweet everything the user tweets
-
-
 my_bot.auto_rt("from:elonmusk", count=1)
 my_bot.auto_rt("from:itsnirnay", count=1)
 my_bot.auto_rt("from:MikeMeyers", count=1)
@@ -48,9 +49,8 @@ my_bot.auto_rt("from:techCrunch", count=1)
 my_bot.auto_rt("from:amazon", count=1)
 my_bot.auto_rt("from:joshuamorony", count=1)
 my_bot.auto_rt("from:DrAmandaR", count=1)
-my_bot.auto_rt("from:ElonMuskNewsOrg", count=1)
 my_bot.auto_rt("from:HarrisPastides", count=1)
-my_bot.auto_rt("from:TonyKlor", count=2)
+my_bot.auto_rt("from:TonyKlor", count=1)
 my_bot.auto_rt("from:evankimbrell", count=1)
 
 
@@ -59,11 +59,29 @@ my_bot.auto_fav("from:itsnirnay", count=1)
 my_bot.auto_fav("from:MikeMeyers", count=1)
 my_bot.auto_fav("from:SteveBenjaminSC", count=1)
 my_bot.auto_fav("from:techCrunch", count=1)
-#my_bot.auto_fav("from:GMA", count=1)
 my_bot.auto_fav("from:joshuamorony", count=1)
 my_bot.auto_fav("from:DrAmandaR", count=1)
 my_bot.auto_fav("from:amazon", count=1)
-my_bot.auto_fav("from:ElonMuskNewsOrg", count=1)
 my_bot.auto_fav("from:HarrisPastides", count=1)
-my_bot.auto_fav("from:TonyKlor", count=2)
+my_bot.auto_fav("from:TonyKlor", count=1)
 my_bot.auto_fav("from:evankimbrell", count=1)
+
+
+#change stdout back to original stdout
+sys.stdout = old_stdout
+
+#send an email
+fromaddr = "dml1002313@gmail.com"
+toaddr = "konstantinrubin@engineer.com"
+msg = MIMEMultipart()
+msg['From'] = fromaddr
+msg['To'] = toaddr
+msg['Subject'] = "TwitterBot executed"
+body = mystdout.getvalue()
+msg.attach(MIMEText(body, 'plain'))
+server = smtplib.SMTP('smtp.gmail.com', 587)
+server.starttls()
+server.login(fromaddr, "SteveNash701")
+text = msg.as_string()
+server.sendmail(fromaddr, toaddr, text)
+server.quit()
