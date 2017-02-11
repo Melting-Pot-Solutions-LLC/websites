@@ -41,6 +41,7 @@ my_bot.auto_fav("Columbia, SC", count=1)
 
 
 # retweet everything the user tweets
+my_bot.auto_rt("from:@ChangeAgentLisa", count=1)
 my_bot.auto_rt("from:elonmusk", count=1)
 my_bot.auto_rt("from:itsnirnay", count=1)
 my_bot.auto_rt("from:MikeMeyers", count=1)
@@ -66,6 +67,7 @@ my_bot.auto_rt("from:@PJCrowley", count=1)
 my_bot.auto_rt("from:@LoriGreiner", count=1)
 
 
+my_bot.auto_fav("from:@ChangeAgentLisa", count=1)
 my_bot.auto_fav("from:elonmusk", count=1)
 my_bot.auto_fav("from:itsnirnay", count=1)
 my_bot.auto_fav("from:MikeMeyers", count=1)
